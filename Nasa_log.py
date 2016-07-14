@@ -3,17 +3,11 @@
 #Data set from NASA Kennedy Space Center web server in Florida
 #The full data set is freely available at http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html, and it contains all HTTP requests for two months.
 
-# Specify path to downloaded log file
-import sys
-import os
-from pyspark.sql.functions import split, regexp_extract
-
-log_file_path = 'dbfs:/' + os.path.join('databricks-datasets', 'cs100', 'lab2', 'data-001', 'apache.access.log.PROJECT')
-
 #Loading the log file
 # Specify path to downloaded log file
 import sys
 import os
+from pyspark.sql.functions import split, regexp_extract
 
 log_file_path = 'dbfs:/' + os.path.join('databricks-datasets', 'cs100', 'lab2', 'data-001', 'apache.access.log.PROJECT')
 base_df = sqlContext.read.text(log_file_path)
